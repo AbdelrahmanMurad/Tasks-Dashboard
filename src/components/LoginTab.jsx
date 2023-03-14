@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import UserController from "../controllers/user-controller";
 import User from "../models/user";
 import { authActions } from "../redux/slices/auth-slice";
@@ -11,7 +11,7 @@ export default function LoginTab() {
   let emailRef = useRef();
   let passwordRef = useRef();
 
-  let navigator = useNavigate();
+  // let navigator = useNavigate();
   let dispatch = useDispatch();
 
   let onFormSubmitHandler = async (event) => {

@@ -14,18 +14,18 @@ let tasksSlice = createSlice({
     },
     delete(state, action) {
       let filteredTasks = state.data.filter(
-        (element) => element.id != action.payload
+        (element) => element.id !== action.payload
       );
       state.data = filteredTasks;
       state.filteredData = state.data;
     },
     showDetails(state, action) {
-      state.task = state.data.find((element) => element.id == action.payload);
+      state.task = state.data.find((element) => element.id === action.payload);
     },
     filterByCategory(state, action) {
-      if (action.payload != "all") {
+      if (action.payload !== "all") {
         let result = state.data.filter(
-          (element) => element.category == action.payload
+          (element) => element.category === action.payload
         );
         state.filteredData = result;
       } else {
@@ -33,9 +33,9 @@ let tasksSlice = createSlice({
       }
     },
     filterByStatus(state, action) {
-      if (action.payload != "All") {
+      if (action.payload !== "All") {
         let result = state.data.filter(
-          (element) => element.status == action.payload
+          (element) => element.status === action.payload
         );
         state.filteredData = result;
       } else {
@@ -43,7 +43,7 @@ let tasksSlice = createSlice({
       }
     },
     search(state, action) {
-      if (action.payload != "") {
+      if (action.payload !== "") {
         let result = state.data.filter((element) =>
           element.name.includes(action.payload)
         );

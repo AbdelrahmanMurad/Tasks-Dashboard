@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import LoginTab from "../components/LoginTab";
 import RegisterTab from "../components/RegisterTab";
-import SocialMediaComponent from "../components/SocialMediaComonent";
 
 let AuthPage = () => {
   return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import TasksController from "../controllers/tasks-controller";
@@ -36,16 +36,14 @@ export default function TaskDetailsPage() {
   let controller = new TasksController();
 
   let getDetails = async () => {
-    if (Object.keys(task).length == 0) {
+    if (Object.keys(task).length === 0) {
       let tasks = await controller.read();
       dispatch(tasksActions.read(tasks));
       dispatch(tasksActions.showDetails(params.id));
     }
   };
-
-  useEffect(() => {
-    getDetails();
-  }, []);
+  // eslint-disable-next-line
+  useEffect(() => { getDetails(); }, []);
 
   let updateStatusHandler = async (status) => {
     task.status = status;
@@ -78,36 +76,32 @@ export default function TaskDetailsPage() {
             <button
               type="button"
               onClick={() => updateStatusHandler("In Progress")}
-              className={`btn btn-sm btn-outline-secondary ${
-                task.status == "In Progress" && "active"
-              }`}
+              className={`btn btn-sm btn-outline-secondary ${task.status === "In Progress" && "active"
+                }`}
             >
               In Progress
             </button>
             <button
               type="button"
               onClick={() => updateStatusHandler("Complete")}
-              className={`btn btn-sm btn-outline-secondary ${
-                task.status == "Complete" && "active"
-              }`}
+              className={`btn btn-sm btn-outline-secondary ${task.status === "Complete" && "active"
+                }`}
             >
               Complete
             </button>
             <button
               type="button"
               onClick={() => updateStatusHandler("Waiting")}
-              className={`btn btn-sm btn-outline-secondary ${
-                task.status == "Waiting" && "active"
-              }`}
+              className={`btn btn-sm btn-outline-secondary ${task.status === "Waiting" && "active"
+                }`}
             >
               Waiting
             </button>
             <button
               type="button"
               onClick={() => updateStatusHandler("Canceled")}
-              className={`btn btn-sm btn-outline-secondary ${
-                task.status == "Canceled" && "active"
-              }`}
+              className={`btn btn-sm btn-outline-secondary ${task.status === "Canceled" && "active"
+                }`}
             >
               Canceled
             </button>
@@ -120,7 +114,7 @@ export default function TaskDetailsPage() {
 
       <div className="row mt-5">
         <div className="col-md-6">
-          <img src="img/1.png" className="img-fluid rounded de-img" />
+          {/* <img src="img/1.png" className="img-fluid rounded de-img" /> */}
         </div>
         <div className="col-md-6 mt-5">
           <div className="mb-3">

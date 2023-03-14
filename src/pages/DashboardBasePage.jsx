@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { authActions } from "../redux/slices/auth-slice";
 import { tasksActions } from "../redux/slices/tasks-slice";
 
@@ -22,9 +22,9 @@ let DashboardBasePage = () => {
   return (
     <Fragment>
       <header className="navbar sticky-top navbar-light bg-light flex-md-nowrap p-0 shadow">
-        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-          Momen Task
-        </a>
+        <NavLink className={"navbar-brand col-md-3 col-lg-2 me-0 px-3"} to={"/"}>
+          Murad Task
+        </NavLink>
         <button
           className="navbar-toggler position-absolute d-md-none collapsed"
           type="button"
@@ -89,10 +89,10 @@ let DashboardBasePage = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <NavLink className={"nav-link"} to={"/"}>
                     <span data-feather="users"></span>
                     {loggedIn ?? "NO VALUE!"}
-                  </a>
+                  </NavLink>
                 </li>
                 {/* <li className="nav-item">
                   <a className="nav-link" href="#">

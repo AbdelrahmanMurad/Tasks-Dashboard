@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TasksController from "../controllers/tasks-controller";
 import { tasksActions } from "../redux/slices/tasks-slice";
 

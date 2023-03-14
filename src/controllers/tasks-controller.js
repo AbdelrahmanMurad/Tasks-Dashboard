@@ -11,11 +11,11 @@ class TasksController {
 
   async create(task) {
     if (
-      task.name.value != "" &&
-      task.category.value != "" &&
-      task.details.value != "" &&
-      task.startDate.value != "" &&
-      task.endDate.value != ""
+      task.name.value !== "" &&
+      task.category.value !== "" &&
+      task.details.value !== "" &&
+      task.startDate.value !== "" &&
+      task.endDate.value !== ""
     ) {
       let response = await task.save();
       if (response != null) {

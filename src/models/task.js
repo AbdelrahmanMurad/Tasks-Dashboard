@@ -47,7 +47,7 @@ class Task {
   async update() {
     let token = localStorage.getItem("token");
     try {
-      let response = await axios.put(
+      await axios.put(
         `https://react-vp3-calc-default-rtdb.firebaseio.com/tasks/${this.id}.json?auth=${token}`,
         {
           name: this.name,

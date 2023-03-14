@@ -13,10 +13,8 @@ export default function TasksPage() {
     const tasks = await controller.read();
     dispatch(tasksActions.read(tasks));
   };
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
+  // eslint-disable-next-line
+  useEffect(() => { fetchTasks(); }, []);
 
   let onCategoryFilterChangeHandler = (event) => {
     dispatch(tasksActions.filterByCategory(event.target.value));

@@ -3,14 +3,14 @@ import ProcessResponse from "../models/ProcessResponse";
 class UserController {
   async register(user) {
     if (
-      user.name != "" &&
-      user.email != "" &&
-      user.password != "" &&
-      user.passwordConfirmation != ""
+      user.name !== "" &&
+      user.email !== "" &&
+      user.password !== "" &&
+      user.passwordConfirmation !== ""
     ) {
       console.log(user.password);
       console.log(user.passwordConfirmation);
-      if (user.password == user.passwordConfirmation) {
+      if (user.password === user.passwordConfirmation) {
         let data = await user.register();
         if (data != null) {
           return new ProcessResponse(true, "Registered successfully", data);
@@ -26,7 +26,7 @@ class UserController {
   }
 
   async signIn(user) {
-    if (user.email != "" && user.password != "") {
+    if (user.email !== "" && user.password !== "") {
       let response = await user.signIn();
       if (response != null) {
         console.log(response);
@@ -40,7 +40,7 @@ class UserController {
   }
 
   async signOut(user) {
-    let response = user.signOut();
+    // let response = user.signOut();
   }
 }
 
